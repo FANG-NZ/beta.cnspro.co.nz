@@ -6,7 +6,7 @@ export default function AboutUsPage(){
     return(
         <Layout>
             <Head>
-                <title>About us</title>
+                <title>About Us - CNSPRO</title>
             </Head>
             <h1>TEST About Us Page</h1>
         </Layout>

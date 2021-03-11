@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <Layout>
       <Head>
-        <title>Home</title>
+        <title>Home - CNSPRO</title>
       </Head>
 
       <h1>TEST LINE</h1>
