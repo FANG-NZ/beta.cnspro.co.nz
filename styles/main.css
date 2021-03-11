@@ -139,7 +139,7 @@ button {
  * csswizardry.com/2012/06/single-direction-margin-declarations
  */
 .bg-pattern-01 {
-  background: url("../images/bg-pattern-01.jpg") center center/cover fixed no-repeat;
+  background: url("../assets/images//bg-pattern-01.jpg") center center/cover fixed no-repeat;
 }
 
 /* BLOCK REVEALER */
@@ -4035,7 +4035,7 @@ button {
 }
 
 .landing-page--dark {
-  background: url("../images/landing/bg-landing.jpg") center center/cover no-repeat;
+  background: url("../assets/images//landing/bg-landing.jpg") center center/cover no-repeat;
 }
 
 .landing-page--dark .landing .entry-title {
@@ -4498,7 +4498,7 @@ button {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: url("../images/bg-project-01.jpg");
+  background-image: url("../assets/images//bg-project-01.jpg");
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -5094,7 +5094,7 @@ button {
   position: relative;
   padding: 75px 0;
   padding-bottom: 95px;
-  background-image: url("../images/bg-footer-01.jpg");
+  background-image: url("../assets/images//bg-footer-01.jpg");
 }
 
 .footer.bg-parallax {
@@ -7681,23 +7681,23 @@ button {
 }
 
 .bg-pattern-1 {
-  background: url("../images/icon/bg-pattern-02.jpg") center center/cover no-repeat;
+  background: url("../assets/images//icon/bg-pattern-02.jpg") center center/cover no-repeat;
 }
 
 .bg-pattern-2 {
-  background: url("../images/icon/bg-pattern-03.jpg") center center/cover no-repeat;
+  background: url("../assets/images//icon/bg-pattern-03.jpg") center center/cover no-repeat;
 }
 
 .bg-image-1 {
-  background: url("../images/bg-page-01.jpg") center center/cover no-repeat;
+  background: url("../assets/images//bg-page-01.jpg") center center/cover no-repeat;
 }
 
 .bg-image-2 {
-  background: url("../images/bg-page-02.jpg") center center/cover no-repeat;
+  background: url("../assets/images//bg-page-02.jpg") center center/cover no-repeat;
 }
 
 .bg-image-3 {
-  background: url("../images/bg-coming.jpg") center center/cover no-repeat;
+  background: url("../assets/images//bg-coming.jpg") center center/cover no-repeat;
 }
 
 .bg-c2 {
