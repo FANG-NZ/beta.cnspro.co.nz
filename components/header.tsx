@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import styles from '../styles/header.module.scss'
 
 const Header = () => {
 
@@ -12,14 +13,14 @@ const Header = () => {
                         <div className="wrap wrap--w1790">
                             <div className="container-fluid">
                                 <div className="header__content">
-                                    <div className="logo">                            
+                                    <div className={`logo ${styles.logo}`}>                            
                                         <Image  
                                             src="/images/cns-icon-152.png"
-                                            width="60"
-                                            height="60"
+                                            width="40"
+                                            height="40"
                                             alt="CNSPRO"
                                         />
-                                        <span>CNSPRO</span>
+                                        <span>CNS PRO</span>
                                     </div>
 
                                     <div className="header__content-right">
@@ -64,9 +65,16 @@ const Header = () => {
                 <div className="header-mobile__bar">
                     <div className="container-fluid">
                         <div className="header-mobile__bar-inner">
-                            <a className="logo" href="index.html">
-                                <img src="/images/cns-icon-76.png" alt="CNSPRO" />
-                            </a>
+
+                            <div className={`logo ${styles.logo}`}>
+                                <Image 
+                                    src="/images/cns-icon-152.png"
+                                    width="35"
+                                    height="35"
+                                    alt="CNSPRO"
+                                />
+                                <span>CNS PRO</span>
+                            </div>
                             <button className="hamburger hamburger--slider float-right" type="button">
                                 <span className="hamburger-box">
                                     <span className="hamburger-inner"></span>

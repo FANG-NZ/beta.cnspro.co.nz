@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import Head from "next/head"
 import Header from '../components/header'
+import Footer from '../components/footer'
 
 type Props = {
     children?: ReactNode,
@@ -30,9 +31,8 @@ const Layout = ({children, title="PAGE"}:Props) => {
                 {children}
             </main>
             
-            <footer className="footer bg-parallax">
-                <h1>TEST FOOTER</h1>
-            </footer>
+            {/* Page footer */}
+            <Footer />
         </div>
     )
 }

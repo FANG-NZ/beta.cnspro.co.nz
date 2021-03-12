@@ -1,14 +1,15 @@
 import Head from 'next/head'
-import Layout from '../components/layout'
+import React from 'react'
 
 export default function AboutUsPage(){
 
     return(
-        <Layout>
+        <React.Fragment>
             <Head>
                 <title>About Us - CNSPRO</title>
             </Head>
+
             <h1>TEST About Us Page</h1>
-        </Layout>
+        </React.Fragment>
     )
 }
