@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-
+//import SliderSection from '../components/slider-section'
 //import $ from "../assets/vendor/jquery/jquery.min.js"
 
 
@@ -32,7 +32,14 @@ export default function HomePage() {
           </div>
       </div>
 
+      {/* <SliderSection  /> */}
       <DynamicSliderSection />
+
+      {/* <script src="/js/jquery.min.js"></script>
+      <script src="/js/revolution/js/jquery.themepunch.tools.min.js"></script>
+      <script src="/js/revolution/js/jquery.themepunch.revolution.min.js"></script> */}
+      {/* <script src="/js/config-revolution.js"></script> */}
+      
 
     </React.Fragment>
   )

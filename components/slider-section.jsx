@@ -9,14 +9,17 @@ import React, { useEffect } from 'react'
  */
  const SliderSection = () => {
   
-    // useEffect(() => {
+    useEffect(() => {
   
-    //   //window.jQuery =require('../assets/vendor/jquery/jquery.min.js')
+      //window.jQuery =require('../assets/vendor/jquery/jquery.min.js')
       
-    //   require('../assets/vendor/revolution/js/source/jquery.themepunch.tools.min.js')
-    //   require('../assets/vendor/revolution/js/jquery.themepunch.revolution.min.js')
-    //   require('../assets/vendor/jquery-files/config-revolution.js')
-    // }, [])
+      //require('../assets/vendor/revolution/js/source/jquery.themepunch.tools.min.js')
+      //require('../assets/vendor/revolution/js/jquery.themepunch.revolution.min.js')
+      //require('../public/js/config-revolution.js')
+
+      //call init rev slider
+      $.revSlider()
+    }, [])
   
   
   
@@ -72,6 +75,7 @@ import React, { useEffect } from 'react'
               </div>
           </div>
           <div className="rev-spacer"></div>
+
       </section>
     )
 }

@@ -13,6 +13,12 @@ class FFDocument extends Document{
                 <body>
                     <Main />
                     <NextScript />
+
+                    {/* Include jquery here */}
+                    <script src="/js/jquery.min.js"></script>
+                    <script src="/js/revolution/js/jquery.themepunch.tools.min.js"></script>
+                    <script src="/js/revolution/js/jquery.themepunch.revolution.min.js"></script>
+                    <script src="/js/config-revolution.js"></script>
                 </body>
             </Html>
         )
