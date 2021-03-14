@@ -3,6 +3,7 @@
 
     /*[ REVOLUTION ]
     ===========================================================*/
+    var relAPI;
 
     function initSlider(){
         try {
@@ -50,7 +51,7 @@
                 if (option.parallaxon === false && option.carouselon === false) {
     
     
-                    that.show().revolution({
+                    relAPI = that.show().revolution({
                         sliderLayout: option.layout,
                         responsiveLevels: [1201, 1200, 992, 768, 576],
                         gridwidth:[1170, 930, 690, 510, 576],
@@ -94,7 +95,7 @@
                 }
     
                 if (option.parallaxon === true) {
-                    that.show().revolution({
+                    relAPI = that.show().revolution({
                         sliderLayout: option.layout,
                         responsiveLevels: [1201, 1200, 992, 768, 576],
                         gridwidth:[1170, 930, 690, 510, 576],
@@ -145,7 +146,7 @@
     
                 if(option.carouselon === true) {
     
-                    that.show().revolution({
+                    relAPI = that.show().revolution({
                         sliderType:"carousel",
                         sliderLayout: option.layout,
                         responsiveLevels: [1201, 1200, 992, 768, 576],
@@ -203,12 +204,23 @@
                 $('html').animate({scrollTop: $($(this).attr("href")).offset().top - 65}, 800);
                 e.preventDefault();
             });
+
+
+
         } catch (err) {
             console.log(err);
         }
     }
+
+    function destroySlider(){
+        relAPI.revkill();
+    }
     
     //set rev slider 
-    $.revSlider = initSlider;
+    $.revSlider = {
+        'init'    : initSlider,
+        'destory' : destroySlider,
+        'api' : relAPI
+    };
 
 })(jQuery);
