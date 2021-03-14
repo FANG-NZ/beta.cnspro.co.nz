@@ -7,3 +7,10 @@
         font-size: 20px;
     }
 }
+
+//define the heade active style
+.header_fixed{
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
+    background: rgba(255,255,255,.95);
+    z-index: 9999;
+}

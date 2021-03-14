@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Sticky from 'react-stickynode'
 import styles from '../styles/header.module.scss'
 
 const Header = () => {
@@ -8,7 +9,8 @@ const Header = () => {
     return(
         <header id="header">
             {/* normal header */}
-            <div className="header header-1 d-none d-lg-block js-header-1">
+            <Sticky innerClass={styles.header_fixed}>
+                <div className="header header-1 d-none d-lg-block js-header-1">
                     <div className="header__bar">
                         <div className="wrap wrap--w1790">
                             <div className="container-fluid">
@@ -59,7 +61,8 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-    
+            </Sticky>
+
             {/* mobile header */}
             <div className="header-mobile d-block d-lg-none">
                 <div className="header-mobile__bar">
