@@ -3,9 +3,15 @@
 
     /*[ REVOLUTION ]
     ===========================================================*/
-    var relAPI;
+    var relAPI = null;
 
     function initSlider(){
+
+        // if(relAPI){
+        //     relAPI.revresume();
+        //     return;
+        // }
+
         try {
             var revControl = $('.js-rev');
             revControl.each(function () {
@@ -214,12 +220,24 @@
 
     function destroySlider(){
         relAPI.revkill();
+        //To remove from DOM
+        relAPI.remove();
+    }
+
+    function stop(){
+        relAPI.revpause();
+    }
+
+    function restart(){
+        relAPI.revresume();
     }
     
     //set rev slider 
     $.revSlider = {
         'init'    : initSlider,
         'destory' : destroySlider,
+        'stop' : stop,
+        'restart' : restart,
         'api' : relAPI
     };
 
