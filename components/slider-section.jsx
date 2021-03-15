@@ -93,8 +93,7 @@ import React, { useEffect } from 'react'
                   </ul>
               </div>
           </div>
-          <div className="rev-spacer"></div>
-
+          {/* <div className="rev-spacer"></div> */}
       </section>
     )
 }

@@ -28,6 +28,17 @@ const Layout = ({children, title="PAGE"}:Props) => {
             <Header />
             
             <main id="main">
+                {/* START page line */}
+                <div className="page-line">
+                    <div className="container">
+                        <div className="page-line__inner">
+                            <div className="page-col"></div>
+                            <div className="page-col"></div>
+                            <div className="page-col"></div>
+                        </div>
+                    </div>
+                </div>
+
                 {children}
             </main>
             
