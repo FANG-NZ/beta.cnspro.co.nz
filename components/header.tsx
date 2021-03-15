@@ -1,10 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Sticky from 'react-stickynode'
 import styles from '../styles/header.module.scss'
 
 const Header = () => {
+    const [showMobileNavMenu, setShowMobileNavMenu] = useState(false)
+
+    /**
+     * Function is to handle button clicked
+     */
+    function handleButtonClicked(){
+        let _state = !showMobileNavMenu
+
+        setShowMobileNavMenu(_state)
+    }
 
     return(
         <header id="header">
@@ -28,14 +38,27 @@ const Header = () => {
                                     <div className="header__content-right">
                                         <nav className="header-nav-menu">
                                             <ul className="menu nav-menu">
-                                                <li className="menu-item menu-item-has-children">
+                                                <li className="menu-item">
                                                     <Link href="/">
                                                         <a>Home</a>
                                                     </Link>
                                                 </li>
+
+                                                <li className="menu-item">
+                                                    <Link href="/new-projects">
+                                                        <a>New projects</a>
+                                                    </Link>
+                                                </li>
+
+                                                <li className="menu-item">
+                                                    <Link href="/">
+                                                        <a>What we have done</a>
+                                                    </Link>
+                                                </li>
+
                                                 <li className="menu-item">
                                                     <Link href="/about-us">
-                                                        <a>about</a>
+                                                        <a>About</a>
                                                     </Link>
                                                 </li>
                                             </ul>
@@ -78,22 +101,37 @@ const Header = () => {
                                 />
                                 <span>CNS PRO</span>
                             </div>
-                            <button className="hamburger hamburger--slider float-right" type="button">
+
+                            <button className={`hamburger hamburger--slider float-right ${showMobileNavMenu? 'is-active': ''}`} 
+                                type="button"
+                                onClick={()=> handleButtonClicked()}
+                            >
                                 <span className="hamburger-box">
                                     <span className="hamburger-inner"></span>
                                 </span>
                             </button>
+
                         </div>
                     </div>
                 </div>
-                <nav className="header-nav-menu-mobile">
+
+                <nav className={`header-nav-menu-mobile ${showMobileNavMenu? styles.nav_menu_mobile_active: ''}`}>
                     <div className="container-fluid">
                         <ul className="menu nav-menu menu-mobile">
-                            <li className="menu-item menu-item-has-children">
-                                <Link href="/">Home</Link>
+                            <li className="menu-item">
+                                <Link href="/">
+                                    <a>Home</a>
+                                </Link>
                             </li>
                             <li className="menu-item">
-                                <Link href="/about-us">about</Link>
+                                <Link href="/new-projects">
+                                    <a>New projects</a>
+                                </Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link href="/about-us">
+                                    <a>about</a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

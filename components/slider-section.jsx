@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useLayoutEffect } from 'react'
 
 /**
  * This is for Slider section
@@ -6,22 +6,24 @@ import React, { useEffect } from 'react'
  * @returns 
  */
  const SliderSection = () => {
+    const sectionRef = useRef()
   
-    useEffect(() => {
-  
+    //we use useLayoutEffect
+    //to init slider & remove slider
+    useLayoutEffect(() => {
+
         //To init slider
         $.revSlider.init()
 
-        //call cleanup
-        return () => {
+        return() => {
             $.revSlider.destory()
         }
-    }, [])
-  
+
+    }, [sectionRef.current])
   
   
     return(
-      <section>
+      <section ref={sectionRef}>
           <div className="rev_slider_wrapper rev_slider_wrapper--p80 tp-overflow-hidden">
               <div className="rev_slider fullwidthabanner js-rev" 
                 data-version="5.4.4" 
@@ -93,7 +95,7 @@ import React, { useEffect } from 'react'
                   </ul>
               </div>
           </div>
-          {/* <div className="rev-spacer"></div> */}
+          <div className="rev-spacer"></div>
       </section>
     )
 }

@@ -7,6 +7,7 @@ import '../public/js/revolution/css/navigation.css'
 import '../public/js/revolution/css/settings.css'
 
 import '../styles/main.css'
+import '../styles/cnspro.scss'
 
 import Layout from '../components/layout'
 

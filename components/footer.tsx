@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import styles from '../styles/footer.module.scss'
+
 /**
  * It is to return year formart for copyright
  * @returns Years string
@@ -14,7 +16,7 @@ const copyrightYear = () => {
 const Footer = () => {
 
     return(
-        <footer className="footer bg-parallax">
+        <footer className={`footer bg-parallax ${styles.cnspro_footer}`}>
             <div className="bg-overlay bg-overlay--p85" style={{backgroundColor: "0, 0, 0, 0.75"}}></div>
             <div className="container">
                 <div className="row">

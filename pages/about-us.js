@@ -9,7 +9,7 @@ export default function AboutUsPage(){
                 <title>About Us - CNSPRO</title>
             </Head>
 
-            <section className="section p-t-100 p-b-65">
+            <section className="section p-t-60 p-b-60">
                 <div className="container">
                     <div className="page-heading">
                         <h4 className="title-sub title-sub--c8 m-b-15">we are CNSPRO</h4>

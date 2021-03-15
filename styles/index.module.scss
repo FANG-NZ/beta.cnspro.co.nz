@@ -1,0 +1,49 @@
+.cnspro_slick_content{
+    flex-flow: row wrap;
+
+    .cnspro_slick_item{
+        padding: 0 10px;
+    }
+
+}
+
+.cnspro_intro_section{
+    padding-top: 80px !important;
+}
+
+//screen > 991px
+@media (min-width: 992px) {
+    
+    .cnspro_intro_section{
+        padding-top: 0 !important;
+    }
+
+}
+
+//screen 769px
+@media (max-width: 769px) {
+    
+    .cnspro_slick_content{
+
+        .cnspro_slick_item{
+            flex: 50%;
+            margin-bottom: 20px;
+        }
+    
+    }
+
+}
+
+//screen 576
+@media (max-width: 576px) {
+    
+    .cnspro_slick_content{
+
+        .cnspro_slick_item{
+            flex: 100%;
+            margin-bottom: 20px;
+        }
+    
+    }
+
+}

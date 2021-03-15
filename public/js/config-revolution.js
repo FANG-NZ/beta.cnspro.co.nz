@@ -221,7 +221,7 @@
     function destroySlider(){
         relAPI.revkill();
         //To remove from DOM
-        relAPI.remove();
+        //relAPI.remove();
     }
 
     function stop(){

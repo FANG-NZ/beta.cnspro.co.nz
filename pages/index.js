@@ -4,7 +4,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import SliderSection from '../components/slider-section'
-//import $ from "../assets/vendor/jquery/jquery.min.js"
+
+import Styles from '../styles/index.module.scss'
 
 
 /**
@@ -14,7 +15,10 @@ import SliderSection from '../components/slider-section'
 const IntroSection = () => {
 
   return(
-    <section className="section-pp pp-easing section-pp--pad" data-background="light" data-title="What we do">
+    <section className={`section-pp pp-easing section-pp--pad ${Styles.cnspro_intro_section}`} 
+        data-background="light" 
+        data-title="What we do"
+    >
         
         <div className="page-line">
             <div className="container">
@@ -105,6 +109,7 @@ const IntroSection = () => {
  * @returns 
  */
 const ProjectsSection = () => {
+
     return(
         <section className="wrap wrap--w1790 p-b-75">
             <div className="section-title m-b-70">
@@ -112,11 +117,11 @@ const ProjectsSection = () => {
                 <h2 className="title-1">Latest projects</h2>
             </div>
             <div className="container-fluid">
-                <div className="slick-wrap slick-project js-slick-wrapper" data-slick-xs="1" data-slick-sm="1" data-slick-md="3" data-slick-lg="4" data-slick-xl="4" data-slick-dots="false" data-slick-customnav="true" data-slick-autoplay="true">
+                <div className="slick-wrap slick-project js-slick-wrapper">
                     <div className="slick-wrap-content">
-                        <div className="slick-content js-slick-content">
+                        <div className={`slick-content js-slick-content ${Styles.cnspro_slick_content}`}>
 
-                            <div className="slick-item">
+                            <div className={`slick-item ${Styles.cnspro_slick_item}`}>
                                 <article className="media media-project">
                                     <figure className="media__img">
                                         <img src="https://freebw.com/templates/tatee/images/project-01.jpg" alt="luxury villa" />
@@ -132,7 +137,8 @@ const ProjectsSection = () => {
                                     </div>
                                 </article>
                             </div>
-                            <div className="slick-item">
+
+                            <div className={`slick-item ${Styles.cnspro_slick_item}`}>
                                 <article className="media media-project">
                                     <figure className="media__img">
                                         <img src="https://freebw.com/templates/tatee/images/project-02.jpg" alt="wooden villa" />
@@ -148,7 +154,8 @@ const ProjectsSection = () => {
                                     </div>
                                 </article>
                             </div>
-                            <div className="slick-item">
+
+                            <div className={`slick-item ${Styles.cnspro_slick_item}`}>
                                 <article className="media media-project">
                                     <figure className="media__img">
                                         <img src="https://freebw.com/templates/tatee/images/project-03.jpg" alt="Skyline" />
@@ -164,7 +171,8 @@ const ProjectsSection = () => {
                                     </div>
                                 </article>
                             </div>
-                            <div className="slick-item">
+
+                            <div className={`slick-item ${Styles.cnspro_slick_item}`}>
                                 <article className="media media-project">
                                     <figure className="media__img">
                                         <img src="https://freebw.com/templates/tatee/images/project-04.jpg" alt="Frozen house" />
@@ -183,10 +191,10 @@ const ProjectsSection = () => {
                             
                         </div>
                     </div>
-                    <div className="slick__nav arrows-1">
+                    {/* <div className="slick__nav arrows-1">
                         <i className="slick-prev slick-arrow js-slick-prev ti-angle-left"></i>
                         <i className="slick-next slick-arrow js-slick-next ti-angle-right"></i>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
