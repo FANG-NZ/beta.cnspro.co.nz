@@ -23,7 +23,8 @@ class FFDocument extends Document{
                     <script src="/js/config-revolution.js"></script>
 
                     {/* import isotope plugin */}
-                    {/* <script src="/js/"></script> */}
+                    <script src="/js/isotope/isotope.pkgd.min.js"></script>
+                    <script src="/js/isotope/imagesloaded.pkgd.min.js"></script>
                 </body>
             </Html>
         )

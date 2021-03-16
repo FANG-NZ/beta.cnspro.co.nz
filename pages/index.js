@@ -250,7 +250,6 @@ export default function HomePage() {
       </Head>
 
       {/* START page body */}
-
       <SliderSection  />
 
       <IntroSection />

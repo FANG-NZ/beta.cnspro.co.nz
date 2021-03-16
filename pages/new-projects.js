@@ -33,6 +33,14 @@ const data = [
         date: "SEP 2021",
         short_description: "Luxurious upper-level apartments with stunning views of the city, Waikato river and Mount Pirongia. The Penthouse Apartments comprise generous floor plans with substantial open-plan dining and living areas, complete with a designer kitchen and scullery, perfect for entertaining.",
         image: 'project-26.jpg',
+    },
+    {
+        id: 5,
+        title: "Courtyard Apartments",
+        location: "Auckland",
+        date: "SEP 2021",
+        short_description: "Luxurious upper-level apartments with stunning views of the city, Waikato river and Mount Pirongia. The Penthouse Apartments comprise generous floor plans with substantial open-plan dining and living areas, complete with a designer kitchen and scullery, perfect for entertaining.",
+        image: 'project-27.jpg',
     }
 ]
 
@@ -74,7 +82,7 @@ const ProejctSection = (props) => {
 
 
 
-export default function NewProjects(){
+export default function NewProjectsPage(){
 
     return(
         <React.Fragment>
