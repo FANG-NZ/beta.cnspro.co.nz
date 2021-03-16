@@ -119,7 +119,7 @@ export default function AllProjectsPage(){
 
         //clearnup callback
         return()=>{
-            _$iso.isotope("destroy")
+            _$iso.isotope('destroy')
         }
     }, [])
 
