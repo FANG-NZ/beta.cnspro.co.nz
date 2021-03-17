@@ -10,10 +10,9 @@ import '../public/js/revolution/css/settings.css'
 import '../styles/main.css'
 import '../styles/cnspro.scss'
 
-import App from 'next/app'
 import Layout from '../components/layout'
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps}) {
 
   return(
     <Layout pageProps={pageProps}>
