@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import Styles from '../styles/project.module.scss'
 
@@ -10,7 +11,7 @@ export default function ProjectPage(){
 
     return(
         <React.Fragment>
-        <div className="container">
+        <div className={`container ${Styles.cnspro_container}`}>
             <Head>
                 <title>{_title} - CNSPRO</title>
             </Head>
@@ -37,11 +38,15 @@ export default function ProjectPage(){
                                     <div className="entry-meta__item">
                                         <h4 className="key">
                                             <i className="fa fa-bed"></i>
-                                            Bedrooms:</h4>
+                                            <span>Bedrooms:</span>
+                                        </h4>
                                         <span className="value">5</span>
                                     </div>
                                     <div className="entry-meta__item">
-                                        <h4 className="key">Bathrooms:</h4>
+                                        <h4 className="key">
+                                            <i class="fa fa-bath"></i>
+                                            <span>Bathrooms:</span>
+                                        </h4>
                                         <span className="value">2</span>
                                     </div>
                                     <div className="entry-meta__item">
@@ -51,11 +56,17 @@ export default function ProjectPage(){
                                 </div>
                                 <div className="col-sm-6">
                                     <div className="entry-meta__item">
-                                        <h4 className="key">Carpark:</h4>
+                                        <h4 className="key">
+                                            <i className="fa fa-warehouse"></i>
+                                            <span>Carpark:</span>
+                                        </h4>
                                         <span className="value">2</span>
                                     </div>
                                     <div className="entry-meta__item">
-                                        <h4 className="key">Living room:</h4>
+                                        <h4 className="key">
+                                            <i className="fa fa-couch"></i>
+                                            <span>Living room:</span>
+                                        </h4>
                                         <span className="value">2</span>
                                     </div>
                                     <div className="entry-meta__item">
@@ -132,28 +143,47 @@ export default function ProjectPage(){
             </article>
         </div>
 
-        <nav class="navigation project-navigation">
-            <div class="container">
-                <div class="nav-links">
-                    {/* <div class="nav-previous">
+        <nav className={`navigation project-navigation ${Styles.cnspro_navigation}`}>
+            <div className="container">
+                <div className={`nav-links ${Styles.nav_links}`}>
+                    {/* <div className="nav-previous">
                         <a href="#">
-                            <span class="ti-arrow-left"></span>
+                            <span className="ti-arrow-left"></span>
                         </a>
                     </div> */}
-                    <div class="all-link-wrap">
-                        <a class="all-link" href="#">
-                            <i class="fa fa-undo"></i>
-                            Back
-                        </a>
+                    <div className={`all-link-wrap ${Styles.cnspro_link_wrap}`}>
+                        <Link href="/">
+                            <a className={Styles.cnspro_nav_link}>
+                                <i className="fa fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </Link>
                     </div>
-                    {/* <div class="nav-next">
-                        <a href="#">
-                            <span class="ti-arrow-right"></span>
-                        </a>
-                    </div> */}
+                    <div className={`nav-next ${Styles.cnspro_link_wrap}`}>
+                        <Link href="/all-projects">
+                            <a className={Styles.cnspro_nav_link}>
+                                <i className="fa fa-th-list"></i>
+                                <span>All projects</span>
+                            </a>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </nav>
         </React.Fragment>
     )
 }
+
+
+/**
+ * To define the static props here
+ * @returns 
+ */
+// export async function getStaticProps() {
+    
+//     return {
+//         props: {
+//             isShowPageLine: false
+//         }
+//     }
+// }

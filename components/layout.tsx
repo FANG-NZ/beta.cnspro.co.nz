@@ -5,10 +5,18 @@ import Footer from '../components/footer'
 
 type Props = {
     children?: ReactNode,
-    title?: string
+    title?: string,
+    pageProps?: Object
 }
 
-const Layout = ({children, title="PAGE"}:Props) => {
+const defaultPageProps = {
+    isShowPageLine: true
+}
+
+const Layout = ({children, title="PAGE", pageProps}:Props) => {
+
+    const _props = {...defaultPageProps, ...pageProps}
+
     return(
         <div className="page-wrapper">
             <Head>
@@ -29,15 +37,18 @@ const Layout = ({children, title="PAGE"}:Props) => {
             
             <main id="main">
                 {/* START page line */}
-                <div className="page-line">
-                    <div className="container">
-                        <div className="page-line__inner">
-                            <div className="page-col"></div>
-                            <div className="page-col"></div>
-                            <div className="page-col"></div>
+                {_props.isShowPageLine && 
+                
+                    <div className="page-line">
+                        <div className="container">
+                            <div className="page-line__inner">
+                                <div className="page-col"></div>
+                                <div className="page-col"></div>
+                                <div className="page-col"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
 
                 {children}
             </main>
