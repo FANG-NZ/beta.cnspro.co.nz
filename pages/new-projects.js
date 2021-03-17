@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 
 const data = [
     {
@@ -56,9 +57,11 @@ const ProejctSection = (props) => {
                     <article className={`media-project-3 ${_isOdd ? "right" : ""}`}>
                         <div className="media__body">
                             <figure className="media__img">
-                                <a href="#view">
+                                <Link href="/project">
+                                <a>
                                     <img src={`https://freebw.com/templates/tatee/images/${_project.image}`} alt={_project.title} />
                                 </a>
+                                </Link>
                             </figure>
                             <span className="add">{_project.location}</span>
                             <span className="year">{_project.date}</span>
@@ -67,10 +70,13 @@ const ProejctSection = (props) => {
                                 <h4 className="title-sub title-sub--c8">architecture</h4>
                                 <h2 className="title-3">{_project.title}</h2>
                                 <p className="media__text">{_project.short_description}</p>
-                                <a className="au-btn au-btn--arrow" href="#view">
+
+                                <Link href="/project">
+                                <a className="au-btn au-btn--arrow">
                                     See more
                                     <i className="zmdi zmdi-arrow-right ic-arrow"></i>
                                 </a>
+                                </Link>
                             </div>
                         </div>
                     </article>

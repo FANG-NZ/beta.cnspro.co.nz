@@ -1,27 +1,50 @@
-import React from 'react'
+import React, {useLayoutEffect} from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
+import { loadProjectData } from '../tools/project-loader'
 import Styles from '../styles/project.module.scss'
 
-export default function ProjectPage(){
+export default function ProjectPage(props){
 
-    const _title = "Test title"
-    const _location = "Somewhere"
+    const _project = props.data
+
+    useLayoutEffect(() => {
+        let _$iso;
+
+        //init iso
+        _$iso = $(".isotope-content").isotope({
+            itemSelector: '.isotope-item',
+            percentPosition: true,
+            animationEngine : 'best-available',
+            masonry: {
+                columnWidth: '.isotope-item-sizer',
+            }
+        });
+
+        _$iso.imagesLoaded().progress( function() {
+            _$iso.isotope('layout');
+        });
+
+        //clearnup callback
+        return()=>{
+            _$iso.isotope('destroy')
+        }
+    }, [])
 
     return(
         <React.Fragment>
         <div className={`container ${Styles.cnspro_container}`}>
             <Head>
-                <title>{_title} - CNSPRO</title>
+                <title>{_project.title} - CNSPRO</title>
             </Head>
 
             <section className="section p-t-60 p-b-60">
                 <div className="container">
                     <div className="page-heading">
-                        <h4 className="title-sub title-sub--c8 m-b-15">{_title}</h4>
+                        <h4 className="title-sub title-sub--c8 m-b-15">{_project.title}</h4>
                         <h2 className="title-2">
-                            {_location}
+                            {_project.location}
                         </h2>
                     </div>
                 </div>
@@ -40,18 +63,18 @@ export default function ProjectPage(){
                                             <i className="fa fa-bed"></i>
                                             <span>Bedrooms:</span>
                                         </h4>
-                                        <span className="value">5</span>
+                                        <span className="value">{_project.num_bedroom}</span>
                                     </div>
                                     <div className="entry-meta__item">
                                         <h4 className="key">
-                                            <i class="fa fa-bath"></i>
+                                            <i className="fa fa-bath"></i>
                                             <span>Bathrooms:</span>
                                         </h4>
-                                        <span className="value">2</span>
+                                        <span className="value">{_project.num_bathroom}</span>
                                     </div>
                                     <div className="entry-meta__item">
                                         <h4 className="key">Land area:</h4>
-                                        <span className="value">230 m2</span>
+                                        <span className="value">{_project.landarea}</span>
                                     </div>
                                 </div>
                                 <div className="col-sm-6">
@@ -60,18 +83,18 @@ export default function ProjectPage(){
                                             <i className="fa fa-warehouse"></i>
                                             <span>Carpark:</span>
                                         </h4>
-                                        <span className="value">2</span>
+                                        <span className="value">{_project.num_carpark}</span>
                                     </div>
                                     <div className="entry-meta__item">
                                         <h4 className="key">
                                             <i className="fa fa-couch"></i>
                                             <span>Living room:</span>
                                         </h4>
-                                        <span className="value">2</span>
+                                        <span className="value">{_project.num_livingroom}</span>
                                     </div>
                                     <div className="entry-meta__item">
                                         <h4 className="key">Floor area:</h4>
-                                        <span className="value">92 m2</span>
+                                        <span className="value">{_project.floorarea}</span>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +145,22 @@ export default function ProjectPage(){
                     
                 <div className="masonry-row js-isotope-wrapper">
                     <div className="row isotope-content">
-                        <div className="col-md-6 col-lg-4 isotope-item isotope-item-sizer">
+
+
+                        {_project.images.map((item, index) => {
+
+                            return(
+                                <div key={index} className="col-md-6 col-lg-4 isotope-item isotope-item-sizer">
+                                    <img className="wp-post-image" 
+                                        src={`https://freebw.com/templates/tatee/images/${item}`} 
+                                        alt={`image ${index}`} 
+                                    />
+                                </div>
+                            )
+
+                        })}
+
+                        {/* <div className="col-md-6 col-lg-4 isotope-item isotope-item-sizer">
                             <img className="wp-post-image" src="https://freebw.com/templates/tatee/images/post-05.jpg" alt="Post 1" />
                         </div>
                         <div className="col-md-6 col-lg-4 isotope-item">
@@ -136,7 +174,7 @@ export default function ProjectPage(){
                         </div>
                         <div className="col-md-6 col-lg-4 isotope-item">
                             <img className="wp-post-image" src="https://freebw.com/templates/tatee/images/post-09.jpg" alt="Post 5" />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                     
@@ -179,11 +217,13 @@ export default function ProjectPage(){
  * To define the static props here
  * @returns 
  */
-// export async function getStaticProps() {
-    
-//     return {
-//         props: {
-//             isShowPageLine: false
-//         }
-//     }
-// }
+export async function getStaticProps() {
+
+    const data = loadProjectData()
+
+    return {
+        props: {
+            data: data
+        }
+    }
+}
