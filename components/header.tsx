@@ -58,7 +58,13 @@ const Header = () => {
 
                                                 <li className="menu-item">
                                                     <Link href="/about-us">
-                                                        <a>About</a>
+                                                        <a>About Us</a>
+                                                    </Link>
+                                                </li>
+
+                                                <li className="menu-item">
+                                                    <Link href="/contact-us">
+                                                        <a>Contact Us</a>
                                                     </Link>
                                                 </li>
                                             </ul>
@@ -136,6 +142,11 @@ const Header = () => {
                             <li className="menu-item">
                                 <Link href="/about-us">
                                     <a>About</a>
+                                </Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link href="/contact-us">
+                                    <a>Contact Us</a>
                                 </Link>
                             </li>
                         </ul>
