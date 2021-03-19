@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useLayoutEffect } from 'react'
 import Link from 'next/link'
 
+//import '../public/js/jquery.min.js'
+//import '../public/js/revolution/js/jquery.themepunch.tools.min.js'
+//import '../public/js/revolution/js/jquery.themepunch.revolution.min.js'
+//import '../public/js/config-revolution.js'
+
 /**
  * This is for Slider section
  * At this stage, we just use jquery plugin, we will replace with REACT MODULE for this
@@ -8,13 +13,19 @@ import Link from 'next/link'
  */
  const SliderSection = () => {
     const sectionRef = useRef()
+
+    useEffect(()=> {
+
+        //To init slider
+        $.revSlider.init()
+
+    }, [sectionRef.current])
   
     //we use useLayoutEffect
     //to init slider & remove slider
     useLayoutEffect(() => {
 
-        //To init slider
-        $.revSlider.init()
+        //console.log($.revSlider)
 
         return() => {
             $.revSlider.destory()
