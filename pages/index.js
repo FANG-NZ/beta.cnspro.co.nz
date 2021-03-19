@@ -131,7 +131,9 @@ const ProjectsSection = () => {
                                     <span className="line line--bottom"></span>
                                     <div className="media__body">
                                         <h3 className="title">
-                                            <a href="#view">Hamilton East</a>
+                                            <Link href="project">
+                                                <a>Hamilton East</a>
+                                            </Link>
                                         </h3>
                                         <div className="address">New Zealand</div>
                                     </div>
@@ -148,7 +150,9 @@ const ProjectsSection = () => {
                                     <span className="line line--bottom"></span>
                                     <div className="media__body">
                                         <h3 className="title">
-                                            <a href="#view">Rototuna</a>
+                                            <Link href="project">
+                                                <a>Rototuna</a>
+                                            </Link>
                                         </h3>
                                         <div className="address">Hamilton, New Zealand</div>
                                     </div>
@@ -165,7 +169,9 @@ const ProjectsSection = () => {
                                     <span className="line line--bottom"></span>
                                     <div className="media__body">
                                         <h3 className="title">
-                                            <a href="#view">Falgstaff</a>
+                                            <Link href="project">
+                                                <a>Falgstaff</a>
+                                            </Link>
                                         </h3>
                                         <div className="address">Hamilton</div>
                                     </div>
@@ -182,7 +188,9 @@ const ProjectsSection = () => {
                                     <span className="line line--bottom"></span>
                                     <div className="media__body">
                                         <h3 className="title">
-                                            <a href="#view">Hillcrest</a>
+                                            <Link href="project">
+                                                <a>Hillcrest</a>
+                                            </Link>
                                         </h3>
                                         <div className="address">New Zealand</div>
                                     </div>
