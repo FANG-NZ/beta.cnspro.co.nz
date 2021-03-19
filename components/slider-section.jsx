@@ -13,19 +13,13 @@ import Link from 'next/link'
  */
  const SliderSection = () => {
     const sectionRef = useRef()
-
-    useEffect(()=> {
-
-        //To init slider
-        $.revSlider.init()
-
-    }, [sectionRef.current])
   
     //we use useLayoutEffect
     //to init slider & remove slider
     useLayoutEffect(() => {
 
-        //console.log($.revSlider)
+        //To init slider
+        $.revSlider.init()
 
         return() => {
             $.revSlider.destory()
