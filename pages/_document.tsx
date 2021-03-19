@@ -13,7 +13,6 @@ class FFDocument extends Document{
                 <Head />
                 <body>
                     <Main />
-                    <NextScript />
 
                     {/* Include jquery here */}
                     <script src="/js/jquery.min.js"></script>
@@ -26,6 +25,8 @@ class FFDocument extends Document{
                     {/* import isotope plugin */}
                     <script src="/js/isotope/isotope.pkgd.min.js"></script>
                     <script src="/js/isotope/imagesloaded.pkgd.min.js"></script>
+
+                    <NextScript />
                 </body>
             </Html>
         )
